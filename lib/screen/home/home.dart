@@ -26,26 +26,43 @@ class HomeState extends State<Home>{
   }
 
   Widget _buildBody(){
-    return FutureBuilder(
-      future: DefaultAssetBundle.of(context).loadString('assets/restaurants.json'),
-      builder: (context, snapshot){
-        List<dynamic> restaurants = json.decode(snapshot.data.toString());
-        return ListView.builder(
-            itemBuilder: (BuildContext context, int index){
-              Restaurant rest = Restaurant.fromJson(restaurants[index]);
-              return _buildRestaurant(rest.restaurante);
-            },
-            itemCount: restaurants == null ? 0 : restaurants.length,
-        );
-      },
+    return Container(
+      margin: EdgeInsets.all(5),
+      child: FutureBuilder(
+        future: DefaultAssetBundle.of(context).loadString('assets/restaurants.json'),
+        builder: (context, snapshot){
+          List<dynamic> restaurants = json.decode(snapshot.data.toString());
+          return ListView.builder(           
+              itemBuilder: (BuildContext context, int index){
+                Restaurant rest = Restaurant.fromJson(restaurants[index]);
+                return _buildRestaurant(rest.restaurante);
+              },
+              itemCount: restaurants == null ? 0 : restaurants.length,
+          );
+        },
+      ),
     );
   }
 
   Widget _buildRestaurant(restaurantName){
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(restaurantName),
-        _buildListItem(restaurantName)
+        Container(
+          margin: EdgeInsets.all(8),
+          child: Text(
+            restaurantName,
+            style: TextStyle(
+              fontSize: 16,
+            ),
+          ),
+        ),
+        _buildListItem(restaurantName),
+         Divider(
+          color: Colors.grey,
+          height: 10,
+          thickness: 0.2,
+        )
       ],
     );
   }
@@ -77,12 +94,22 @@ class HomeState extends State<Home>{
       height: 250,
       width: 200,
       child: Card(
-        color: Colors.deepOrange,
         margin: EdgeInsets.all(8),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image.asset(foto),
-            Text(nomeDoPrato)
+            Expanded(
+                child: Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    nomeDoPrato,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                    ),
+                  ),
+                )
+            ),
           ],
         ),
       ),
@@ -90,6 +117,6 @@ class HomeState extends State<Home>{
   }
 
   Widget _buildAppBar(){
-    return AppBar(title: Text('Hello'),);
+    return AppBar(title: Text('Saia para Jantar'),);
   }
 }

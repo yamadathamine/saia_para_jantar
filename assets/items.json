@@ -98,13 +98,6 @@
     "Foto": "assets/images/bjoint31.png"
   },
   {
-    "Restaurante": "Burger Joint",
-    "Nome do prato": "Jaks Poró",
-    "Preço": "R$21,90",
-    "Descrição": "Pão australiano, blend 180g, tomate cereja, queijo brie, queijo polenguinho branco, farofa de bacon e alho poró com azeite. Disponível na versão vegetariana com hambúguer de soja com castanhas.",
-    "Foto": "assets/images/bjoint21.png"
-  },
-  {
     "Restaurante": "CajuCaqui Restaurante",
     "Nome do prato": "Peixe em Crosta de Castanha do Pará com Crispy de Cebola",
     "Preço": "R$ 41,90",
@@ -348,13 +341,6 @@
     "Preço": "R$31,90",
     "Descrição": "Hambúrguer artesanal, pão de brioche, queijo coalho grelhado, rabanete laminado, rúcula, gengibre seco, acompanhado com geléia artesanal de abacaxi com pimenta e hortelã e batatas rústicas",
     "Foto": "assets/images/jolly31.png"
-  },
-  {
-    "Restaurante": "Jolly Gastro Lab",
-    "Nome do prato": "Banana Jam",
-    "Preço": "R$21,90",
-    "Descrição": "Coquetel elaborado a base de banana flambada com canela e brandy, cachaça envelhecida, laranja, limão e garnish de canela em pau",
-    "Foto": "assets/images/jolly21.png"
   },
   {
     "Restaurante": "Kamzu Cookie Shop",
